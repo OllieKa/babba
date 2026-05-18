@@ -3,30 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="DeepSociety presents Big Babba 2.0 – der offizielle Release-Kalender mit allen Singles & Streaming-Links." />
+  <meta name="description" content="DeepSociety presents Big Babba 2.0 &ndash; der offizielle Release-Kalender mit allen Singles & Streaming-Links." />
   <meta name="theme-color" content="#050507" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="Big Babba 2.0 | DeepSociety" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Big Babba 2.0 | DeepSociety" />
   <meta property="og:description" content="Alle Singles, Release-Termine und Streaming-Links auf einen Blick." />
-  <meta property="og:image"       content="./assets/1.webp" />
-  <meta property="og:locale"      content="de_DE" />
+  <meta property="og:image" content="./assets/1.webp" />
+  <meta property="og:locale" content="de_DE" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Big Babba 2.0 | DeepSociety" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Big Babba 2.0 | DeepSociety" />
   <meta name="twitter:description" content="Alle Singles, Release-Termine und Streaming-Links auf einen Blick." />
-  <meta name="twitter:image"       content="./assets/1.webp" />
+  <meta name="twitter:image" content="./assets/1.webp" />
 
   <title>Big Babba 2.0 | DeepSociety</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800;900&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 
@@ -48,116 +44,17 @@
       </nav>
     </header>
 
-    <section class="status-box" aria-label="Nächster Release">
+    <section class="status-box" aria-label="Naechster Release">
       <div>
         <span class="label">Next Drop</span>
-        <strong id="nextTrack">–</strong>
+        <strong id="nextTrack">&ndash;</strong>
       </div>
-      <div class="countdown" id="countdown" aria-live="polite">–</div>
+      <div class="countdown" id="countdown" aria-live="polite">&ndash;</div>
     </section>
 
     <section class="schedule" aria-label="Release Schedule">
       <h2>Release Schedule</h2>
-
-      <div class="release-list">
-
-        <!-- ── 1 ── -->
-        <article class="release-card" data-date="2026-03-26">
-          <time datetime="2026-03-26">26.03.2026</time>
-          <h3> BiG Babba - 1Tausend BPM</h3>
-          <span class="badge">Verfügbar</span>
-          <div class="song-links">
-            <a href="https://open.spotify.com/intl-de/track/3QvkOMEHtMVIvboz34UCz5" target="_blank" rel="noopener noreferrer" aria-label="1Tausend BPM auf Spotify hören">
-              <svg class="icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.5-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.6 1.2.3.2.4.6.1 1zm1.3-3c-.2.3-.7.4-1 .2-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.1 8.8-.6 12.1 1.5.3.2.4.7.2 1zm.1-3.1C15.8 9.2 9.7 9 6.8 10c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.3-1.2 10-1 13.6 1.2.5.3.6.9.3 1.3-.3.5-.9.6-1.3.3z"/></svg>
-            </a>
-          </div>
-        </article>
-        
-        <!-- ── 2 ── -->
-        <article class="release-card" data-date="2026-06-19">
-          <time datetime="2026-06-19">19.06.2026</time>
-          <h3> DeepSociety - Rede</h3>
-          <span class="badge">Geplant</span>
-          <div class="song-links">
-            <a href="#" aria-disabled="true" aria-label="Spotify – demnächst verfügbar">
-              <svg class="icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.5-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.6 1.2.3.2.4.6.1 1zm1.3-3c-.2.3-.7.4-1 .2-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.1 8.8-.6 12.1 1.5.3.2.4.7.2 1zm.1-3.1C15.8 9.2 9.7 9 6.8 10c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.3-1.2 10-1 13.6 1.2.5.3.6.9.3 1.3-.3.5-.9.6-1.3.3z"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- ── 3 ── -->
-        <article class="release-card" data-date="2026-06-20">
-          <time datetime="2026-06-20">20.06.2026</time>
-          <h3> BiG Babba - Honey</h3>
-          <span class="badge">Geplant</span>
-          <div class="song-links">
-            <a href="#" aria-disabled="true" aria-label="Spotify – demnächst verfügbar">
-              <svg class="icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.5-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.6 1.2.3.2.4.6.1 1zm1.3-3c-.2.3-.7.4-1 .2-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.1 8.8-.6 12.1 1.5.3.2.4.7.2 1zm.1-3.1C15.8 9.2 9.7 9 6.8 10c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.3-1.2 10-1 13.6 1.2.5.3.6.9.3 1.3-.3.5-.9.6-1.3.3z"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- ── 4 ── -->
-        <article class="release-card" data-date="2026-06-27">
-          <time datetime="2026-06-27">27.06.2026</time>
-          <h3> BiG Babba - Babbalc</h3>
-          <span class="badge">Geplant</span>
-          <div class="song-links">
-            <a href="#" aria-disabled="true" aria-label="Spotify – demnächst verfügbar">
-              <svg class="icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.5-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.6 1.2.3.2.4.6.1 1zm1.3-3c-.2.3-.7.4-1 .2-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.1 8.8-.6 12.1 1.5.3.2.4.7.2 1zm.1-3.1C15.8 9.2 9.7 9 6.8 10c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.3-1.2 10-1 13.6 1.2.5.3.6.9.3 1.3-.3.5-.9.6-1.3.3z"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- ── 5 ── -->
-        <article class="release-card" data-date="2026-07-04">
-          <time datetime="2026-07-04">04.07.2026</time>
-          <h3> BiG Babba - Kopf Hoch</h3>
-          <span class="badge">Geplant</span>
-          <div class="song-links">
-            <a href="#" aria-disabled="true" aria-label="Spotify – demnächst verfügbar">
-              <svg class="icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.5-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.6 1.2.3.2.4.6.1 1zm1.3-3c-.2.3-.7.4-1 .2-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.1 8.8-.6 12.1 1.5.3.2.4.7.2 1zm.1-3.1C15.8 9.2 9.7 9 6.8 10c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.3-1.2 10-1 13.6 1.2.5.3.6.9.3 1.3-.3.5-.9.6-1.3.3z"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- ── 6 ── -->
-        <article class="release-card" data-date="2026-07-11">
-          <time datetime="2026-07-11">11.07.2026</time>
-          <h3> BiG Babba - Chill'N</h3>
-          <span class="badge">Geplant</span>
-          <div class="song-links">
-            <a href="#" aria-disabled="true" aria-label="Spotify – demnächst verfügbar">
-              <svg class="icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.5-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.6 1.2.3.2.4.6.1 1zm1.3-3c-.2.3-.7.4-1 .2-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.1 8.8-.6 12.1 1.5.3.2.4.7.2 1zm.1-3.1C15.8 9.2 9.7 9 6.8 10c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.3-1.2 10-1 13.6 1.2.5.3.6.9.3 1.3-.3.5-.9.6-1.3.3z"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- ── 7 ── -->
-        <article class="release-card" data-date="2026-07-18">
-          <time datetime="2026-07-18">18.07.2026</time>
-          <h3> BiG Babba - 2 Mann am Mic</h3>
-          <span class="badge">Geplant</span>
-          <div class="song-links">
-            <a href="#" aria-disabled="true" aria-label="Spotify – demnächst verfügbar">
-              <svg class="icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.5-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.6 1.2.3.2.4.6.1 1zm1.3-3c-.2.3-.7.4-1 .2-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.1 8.8-.6 12.1 1.5.3.2.4.7.2 1zm.1-3.1C15.8 9.2 9.7 9 6.8 10c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.3-1.2 10-1 13.6 1.2.5.3.6.9.3 1.3-.3.5-.9.6-1.3.3z"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- ── 8 ── -->
-        <article class="release-card" data-date="2026-07-25">
-          <time datetime="2026-07-25">25.07.2026</time>
-          <h3> BiG Babba - Fight Musik</h3>
-          <span class="badge">Geplant</span>
-          <div class="song-links">
-            <a href="#" aria-disabled="true" aria-label="Spotify – demnächst verfügbar">
-              <svg class="icon spotify" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.5 17.3c-.2.3-.6.4-.9.2-2.5-1.5-5.7-1.9-9.5-1.1-.4.1-.7-.2-.8-.5-.1-.4.2-.7.5-.8 4.2-.9 7.8-.5 10.6 1.2.3.2.4.6.1 1zm1.3-3c-.2.3-.7.4-1 .2-2.9-1.8-7.3-2.3-10.7-1.3-.4.1-.8-.1-.9-.5-.1-.4.1-.8.5-.9 3.9-1.1 8.8-.6 12.1 1.5.3.2.4.7.2 1zm.1-3.1C15.8 9.2 9.7 9 6.8 10c-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 3.3-1.2 10-1 13.6 1.2.5.3.6.9.3 1.3-.3.5-.9.6-1.3.3z"/></svg>
-            </a>
-          </div>
-        </article>
-
-      </div>
+      <div class="release-list" id="releaseList"></div>
     </section>
 
     <footer class="legal">
@@ -165,7 +62,7 @@
         <summary>Impressum &amp; Datenschutz</summary>
         <div class="legal-content">
           <p>
-            Angaben gemäß § 5 DDG<br />
+            Angaben gem&auml;&szlig; &sect; 5 DDG<br />
             Oliver Kienast<br />
             Huttfleth 3I b<br />
             2I720 Steinkirchen<br />
@@ -178,55 +75,10 @@
   </main>
 
   <noscript>
-    <style>.status-box { display: none; }</style>
+    <style>.status-box, .schedule { display: none; }</style>
   </noscript>
 
-  <script>
-    (function () {
-      const cards = [...document.querySelectorAll('.release-card')];
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      const releases = cards.map(card => ({
-        card,
-        date: new Date(card.dataset.date + 'T00:00:00'),
-        title: card.querySelector('h3').textContent,
-        badge: card.querySelector('.badge')
-      }));
-
-      const released = releases.filter(r => r.date <= today);
-      const upcoming = releases.filter(r => r.date > today).sort((a, b) => a.date - b.date);
-
-      released.forEach(r => {
-        r.card.classList.add('released');
-        r.badge.textContent = 'Verfügbar';
-      });
-
-      if (released.length > 0) {
-        // Use spread to avoid mutating the filtered array
-        const latest = [...released].sort((a, b) => b.date - a.date)[0];
-        latest.card.classList.add('current');
-        latest.badge.textContent = 'Jetzt verfügbar';
-      }
-
-      const nextTrack = document.getElementById('nextTrack');
-      const countdown  = document.getElementById('countdown');
-
-      if (upcoming.length > 0) {
-        const next = upcoming[0];
-        next.card.classList.add('next');
-
-        const days = Math.round((next.date - today) / 86400000);
-        nextTrack.textContent = next.title + ' · ' + next.card.querySelector('time').textContent;
-
-        if (days === 0)      countdown.textContent = 'Heute!';
-        else if (days === 1) countdown.textContent = '1 Tag';
-        else                 countdown.textContent = days + ' Tage';
-      } else {
-        nextTrack.textContent = 'Alle Tracks sind verfügbar';
-        countdown.textContent = 'Out now';
-      }
-    })();
-  </script>
+  <script src="assets/releases.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
