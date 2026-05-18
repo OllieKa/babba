@@ -2,7 +2,10 @@
   const releaseList = document.getElementById('releaseList');
   const nextTrack = document.getElementById('nextTrack');
   const countdown = document.getElementById('countdown');
+  const titleBeat = document.getElementById('titleBeat');
+  const audioToggle = document.getElementById('audioToggle');
   const releases = Array.isArray(window.BIG_BABBA_RELEASES) ? window.BIG_BABBA_RELEASES : [];
+  const beatUrl = './assets/background-beat.mp3';
 
   const services = [
     { key: 'spotify', label: 'Spotify', icon: './assets/spotify.svg' },
@@ -172,9 +175,44 @@
     });
   }
 
+  function setupBackgroundBeat() {
+    if (!titleBeat || !audioToggle) return;
+
+    const beat = new Audio(beatUrl);
+    beat.loop = true;
+    beat.volume = 0.16;
+    beat.preload = 'none';
+
+    async function startBeat() {
+      try {
+        await beat.play();
+        audioToggle.hidden = false;
+        titleBeat.classList.add('is-playing');
+      } catch (error) {
+        titleBeat.classList.remove('is-playing');
+      }
+    }
+
+    function stopBeat() {
+      beat.pause();
+      beat.currentTime = 0;
+      audioToggle.hidden = true;
+      titleBeat.classList.remove('is-playing');
+    }
+
+    titleBeat.addEventListener('click', () => {
+      if (beat.paused) {
+        startBeat();
+      }
+    });
+
+    audioToggle.addEventListener('click', stopBeat);
+  }
+
   if (!releaseList || !nextTrack || !countdown) return;
 
   renderReleases();
   updateReleaseState();
   setupCoverLightbox();
+  setupBackgroundBeat();
 })();
