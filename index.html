@@ -35,7 +35,14 @@
   <main class="page">
     <header class="hero">
       <p class="eyebrow">DeepSociety presents</p>
-      <h1>Big Babba 2.0</h1>
+      <h1>
+        <button class="title-beat" id="titleBeat" type="button" aria-label="Hintergrundbeat starten">Big Babba 2.0</button>
+      </h1>
+      <button class="audio-toggle" id="audioToggle" type="button" aria-label="Hintergrundbeat ausschalten" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 9v6h4l5 4V5L7 9H3Zm13.6 3 2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4L16.6 12Z"/>
+        </svg>
+      </button>
       <p class="subline">Official release schedule</p>
 
       <nav class="platforms" aria-label="Streaming-Plattformen">
