@@ -70,9 +70,9 @@
 
       return `
         <article class="release-card" data-date="${escapeHtml(release.date)}">
-          <figure class="release-cover">
+          <button class="release-cover" type="button" aria-label="Cover von ${title} vergroessern">
             <img src="${cover}" alt="Cover: ${title}" loading="lazy" />
-          </figure>
+          </button>
           <time datetime="${escapeHtml(release.date)}">${dateLabel}</time>
           <h3>${title}</h3>
           <span class="badge">Geplant</span>
@@ -125,8 +125,56 @@
     }
   }
 
+  function setupCoverLightbox() {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'cover-lightbox';
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.innerHTML = `
+      <button class="cover-lightbox__backdrop" type="button" aria-label="Cover schliessen"></button>
+      <figure class="cover-lightbox__frame">
+        <img src="" alt="" />
+      </figure>
+    `;
+    document.body.appendChild(lightbox);
+
+    const image = lightbox.querySelector('img');
+    const frame = lightbox.querySelector('.cover-lightbox__frame');
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      image.removeAttribute('src');
+      image.alt = '';
+    }
+
+    releaseList.addEventListener('click', event => {
+      const coverButton = event.target.closest('.release-cover');
+
+      if (!coverButton) return;
+
+      const coverImage = coverButton.querySelector('img');
+      image.src = coverImage.currentSrc || coverImage.src;
+      image.alt = coverImage.alt;
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    });
+
+    lightbox.addEventListener('click', event => {
+      if (!frame.contains(event.target)) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+        closeLightbox();
+      }
+    });
+  }
+
   if (!releaseList || !nextTrack || !countdown) return;
 
   renderReleases();
   updateReleaseState();
+  setupCoverLightbox();
 })();
