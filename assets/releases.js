@@ -8,8 +8,8 @@ window.BIG_BABBA_RELEASES = [
       spotify: "https://open.spotify.com/intl-de/track/3QvkOMEHtMVIvboz34UCz5",
       appleMusic: "",
       amazonMusic: "https://music.amazon.de/albums/B0GV2BFRGR",
-      deezer: "",
-      tidal: ""
+      deezer: "https://link.deezer.com/s/33iMySzx07kSFqr9Jml7W",
+      tidal: "https://tidal.com/album/510400710/u"
     }
   },
   {
