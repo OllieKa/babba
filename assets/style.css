@@ -115,6 +115,65 @@ h1 {
   text-shadow: 0 5px 0 #000, 0 0 32px rgba(255,120,35,.25), 0 14px 48px #000;
 }
 
+.title-beat {
+  appearance: none;
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  text-transform: inherit;
+  background: transparent;
+  -webkit-text-stroke: inherit;
+  text-shadow: inherit;
+  cursor: pointer;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.title-beat:hover,
+.title-beat.is-playing {
+  filter: brightness(1.12);
+}
+
+.title-beat:active {
+  transform: translateY(2px);
+}
+
+.audio-toggle {
+  appearance: none;
+  width: 38px;
+  height: 38px;
+  margin-top: 18px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid rgba(255,177,59,.34);
+  border-radius: 50%;
+  background: rgba(7,7,10,.62);
+  color: var(--gold);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+}
+
+.audio-toggle[hidden] {
+  display: none;
+}
+
+.audio-toggle:hover {
+  transform: scale(1.08);
+  background: rgba(255,177,59,.12);
+  border-color: rgba(255,177,59,.54);
+}
+
+.audio-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
 .subline {
   margin: 22px auto 26px;
   color: var(--muted);
@@ -500,6 +559,8 @@ h1 {
   }
 
   .button,
+  .title-beat,
+  .audio-toggle,
   .song-links a,
   .release-cover,
   .cover-lightbox,
