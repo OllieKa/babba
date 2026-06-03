@@ -240,6 +240,46 @@ h1 {
   -webkit-backdrop-filter: blur(14px);
 }
 
+.status-box.has-next-cover {
+  grid-template-columns: 88px minmax(0, 1fr) auto;
+}
+
+.next-cover {
+  appearance: none;
+  width: 88px;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid rgba(255,177,59,.28);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 14px 34px rgba(0,0,0,.34);
+  cursor: zoom-in;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.next-cover[hidden] {
+  display: none;
+}
+
+.next-cover:hover,
+.next-cover:focus-visible {
+  transform: scale(1.05);
+  border-color: rgba(255,177,59,.54);
+  box-shadow: 0 18px 42px rgba(0,0,0,.42);
+}
+
+.next-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.status-copy {
+  min-width: 0;
+}
+
 .label {
   color: var(--gold);
   font-size: .74rem;
@@ -251,6 +291,7 @@ h1 {
 #nextTrack {
   display: block;
   font-size: clamp(1.05rem, 3vw, 1.32rem);
+  overflow-wrap: anywhere;
 }
 
 .countdown {
@@ -517,7 +558,21 @@ h1 {
     text-align: center;
   }
 
+  .status-box.has-next-cover {
+    grid-template-columns: 72px minmax(0, 1fr);
+    text-align: left;
+  }
+
+  .next-cover {
+    width: 72px;
+  }
+
   .countdown { justify-self: center; }
+
+  .status-box.has-next-cover .countdown {
+    grid-column: 2;
+    justify-self: start;
+  }
 
   .release-card {
     grid-template-columns: 58px minmax(0, 1fr);
@@ -562,6 +617,7 @@ h1 {
   .title-beat,
   .audio-toggle,
   .song-links a,
+  .next-cover,
   .release-cover,
   .cover-lightbox,
   .cover-lightbox__frame,

@@ -1,6 +1,9 @@
 (function () {
   const releaseList = document.getElementById('releaseList');
+  const statusBox = document.querySelector('.status-box');
   const nextTrack = document.getElementById('nextTrack');
+  const nextCover = document.getElementById('nextCover');
+  const nextCoverImage = document.getElementById('nextCoverImage');
   const countdown = document.getElementById('countdown');
   const titleBeat = document.getElementById('titleBeat');
   const audioToggle = document.getElementById('audioToggle');
@@ -97,6 +100,7 @@
       card,
       date: releaseDate(card.dataset.date),
       title: card.querySelector('h3').textContent,
+      coverImage: card.querySelector('.release-cover img'),
       badge: card.querySelector('.badge')
     }));
 
@@ -115,9 +119,19 @@
     if (upcoming.length > 0) {
       const next = upcoming[0];
       const days = Math.round((next.date - today) / 86400000);
+      const nextDateLabel = next.card.querySelector('time').textContent;
+      const nextCoverSrc = next.coverImage ? (next.coverImage.currentSrc || next.coverImage.src) : '';
 
       next.card.classList.add('next');
-      nextTrack.textContent = `${next.title} · ${next.card.querySelector('time').textContent}`;
+      nextTrack.textContent = `${next.title} - ${nextDateLabel}`;
+
+      if (statusBox && nextCover && nextCoverImage && nextCoverSrc) {
+        nextCoverImage.src = nextCoverSrc;
+        nextCoverImage.alt = next.coverImage.alt || `Cover: ${next.title}`;
+        nextCover.setAttribute('aria-label', `Cover von ${next.title} vergroessern`);
+        nextCover.hidden = false;
+        statusBox.classList.add('has-next-cover');
+      }
 
       if (days === 0) countdown.textContent = 'Heute!';
       else if (days === 1) countdown.textContent = '1 Tag';
@@ -125,6 +139,13 @@
     } else {
       nextTrack.textContent = 'Alle Tracks sind verfuegbar';
       countdown.textContent = 'Out now';
+
+      if (statusBox && nextCover && nextCoverImage) {
+        nextCover.hidden = true;
+        nextCoverImage.removeAttribute('src');
+        nextCoverImage.alt = '';
+        statusBox.classList.remove('has-next-cover');
+      }
     }
   }
 
@@ -150,17 +171,27 @@
       image.alt = '';
     }
 
-    releaseList.addEventListener('click', event => {
-      const coverButton = event.target.closest('.release-cover');
-
-      if (!coverButton) return;
-
+    function openLightboxFromButton(coverButton) {
       const coverImage = coverButton.querySelector('img');
       image.src = coverImage.currentSrc || coverImage.src;
       image.alt = coverImage.alt;
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    releaseList.addEventListener('click', event => {
+      const coverButton = event.target.closest('.release-cover');
+
+      if (!coverButton) return;
+
+      openLightboxFromButton(coverButton);
     });
+
+    if (nextCover) {
+      nextCover.addEventListener('click', () => {
+        openLightboxFromButton(nextCover);
+      });
+    }
 
     lightbox.addEventListener('click', event => {
       if (!frame.contains(event.target)) {
