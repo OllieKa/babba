@@ -1,0 +1,43 @@
+# Local environment and secrets
+.env
+.env.*
+*.env
+*.secret
+*.secrets
+secrets.*
+secret.*
+*token*
+*credential*
+
+# Private keys and certificates
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.ppk
+
+# Local-only folders
+.ssh/
+.aws/
+.azure/
+.gcloud/
+.vercel/
+.netlify/
+.cache/
+.tmp/
+tmp/
+temp/
+
+# Dependency/build noise
+node_modules/
+dist/
+build/
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
