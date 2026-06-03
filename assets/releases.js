@@ -15,7 +15,7 @@ window.BIG_BABBA_RELEASES = [
   {
     title: "DeepSociety feat tko - Rede",
     date: "2026-06-19",
-    cover: "./assets/1.webp",
+    cover: "./assets/Cover_Rede.png.jpeg",
     hyperfollowUrl: "",
     links: {
       spotify: "",
@@ -106,7 +106,7 @@ window.BIG_BABBA_RELEASES = [
   {
     title: "DeepSociety feat. ollieka - Radiomusik",
     date: "2026-08-04",
-    cover: "./assets/2.webp",
+    cover: "./assets/Cover_DeepSociety feat Ollie - Radiomusik.png",
     hyperfollowUrl: "",
     links: {
       spotify: "",
