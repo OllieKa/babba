@@ -107,7 +107,7 @@ window.BIG_BABBA_RELEASES = [
     title: "DeepSociety feat. ollieka - Radiomusik",
     date: "2026-08-04",
     cover: "./assets/Cover_DeepSociety feat Ollie - Radiomusik.png",
-    hyperfollowUrl: "",
+    hyperfollowUrl: "https://distrokid.com/hyperfollow/deepsociety/radiomusik-feat-ollieka",
     links: {
       spotify: "",
       appleMusic: "",
