@@ -28,13 +28,57 @@
     })[char]);
   }
 
-  function formatDate(value) {
-    const [year, month, day] = value.split('-');
-    return `${day}.${month}.${year}`;
+  function normalizeReleaseTime(value) {
+    const rawTime = String(value || '').trim();
+
+    if (!rawTime) return '';
+
+    const twelveHourMatch = rawTime.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+
+    if (twelveHourMatch) {
+      let hours = Number(twelveHourMatch[1]);
+      const minutes = twelveHourMatch[2];
+      const period = twelveHourMatch[3].toUpperCase();
+
+      if (period === 'PM' && hours < 12) hours += 12;
+      if (period === 'AM' && hours === 12) hours = 0;
+
+      return `${String(hours).padStart(2, '0')}:${minutes}`;
+    }
+
+    const twentyFourHourMatch = rawTime.match(/^(\d{1,2}):(\d{2})$/);
+
+    if (twentyFourHourMatch) {
+      return `${String(Number(twentyFourHourMatch[1])).padStart(2, '0')}:${twentyFourHourMatch[2]}`;
+    }
+
+    return '';
   }
 
-  function releaseDate(value) {
-    return new Date(`${value}T00:00:00`);
+  function releaseDateTimeValue(dateValue, timeValue) {
+    const normalizedTime = normalizeReleaseTime(timeValue);
+
+    return normalizedTime ? `${dateValue}T${normalizedTime}:00` : dateValue;
+  }
+
+  function formatDate(value, timeValue) {
+    const [year, month, day] = value.split('-');
+    const dateLabel = `${day}.${month}.${year}`;
+    const timeLabel = String(timeValue || '').trim();
+
+    return timeLabel ? `${dateLabel} um ${timeLabel}` : dateLabel;
+  }
+
+  function releaseDate(value, timeValue) {
+    const normalizedTime = normalizeReleaseTime(timeValue) || '00:00';
+
+    return new Date(`${value}T${normalizedTime}:00`);
+  }
+
+  function isSameDay(firstDate, secondDate) {
+    return firstDate.getFullYear() === secondDate.getFullYear()
+      && firstDate.getMonth() === secondDate.getMonth()
+      && firstDate.getDate() === secondDate.getDate();
   }
 
   function serviceUrl(release, service) {
@@ -69,17 +113,19 @@
   function renderReleases() {
     releaseList.innerHTML = releases.map(release => {
       const title = escapeHtml(release.title);
-      const dateLabel = formatDate(release.date);
+      const dateLabel = escapeHtml(formatDate(release.date, release.time));
+      const dateTimeValue = escapeHtml(releaseDateTimeValue(release.date, release.time));
+      const time = escapeHtml(release.time || '');
       const cover = escapeHtml(release.cover || './assets/1.webp');
       const serviceLinks = renderServiceLinks(release, title);
       const presaveLink = renderPresaveLink(release, title);
 
       return `
-        <article class="release-card" data-date="${escapeHtml(release.date)}">
+        <article class="release-card" data-date="${escapeHtml(release.date)}" data-time="${time}">
           <button class="release-cover" type="button" aria-label="Cover von ${title} vergroessern">
             <img src="${cover}" alt="Cover: ${title}" loading="lazy" />
           </button>
-          <time datetime="${escapeHtml(release.date)}">${dateLabel}</time>
+          <time datetime="${dateTimeValue}">${dateLabel}</time>
           <h3>${title}</h3>
           <span class="badge">Geplant</span>
           <div class="song-links">
@@ -93,19 +139,18 @@
 
   function updateReleaseState() {
     const cards = [...document.querySelectorAll('.release-card')];
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const now = new Date();
 
     const renderedReleases = cards.map(card => ({
       card,
-      date: releaseDate(card.dataset.date),
+      date: releaseDate(card.dataset.date, card.dataset.time),
       title: card.querySelector('h3').textContent,
       coverImage: card.querySelector('.release-cover img'),
       badge: card.querySelector('.badge')
     }));
 
-    const released = renderedReleases.filter(release => release.date <= today);
-    const upcoming = renderedReleases.filter(release => release.date > today).sort((a, b) => a.date - b.date);
+    const released = renderedReleases.filter(release => release.date <= now);
+    const upcoming = renderedReleases.filter(release => release.date > now).sort((a, b) => a.date - b.date);
 
     released.forEach(release => {
       release.card.classList.add('released');
@@ -118,7 +163,7 @@
 
     if (upcoming.length > 0) {
       const next = upcoming[0];
-      const days = Math.round((next.date - today) / 86400000);
+      const days = Math.ceil((next.date - now) / 86400000);
       const nextDateLabel = next.card.querySelector('time').textContent;
       const nextCoverSrc = next.coverImage ? (next.coverImage.currentSrc || next.coverImage.src) : '';
 
@@ -133,7 +178,7 @@
         statusBox.classList.add('has-next-cover');
       }
 
-      if (days === 0) countdown.textContent = 'Heute!';
+      if (isSameDay(next.date, now)) countdown.textContent = 'Heute!';
       else if (days === 1) countdown.textContent = '1 Tag';
       else countdown.textContent = `${days} Tage`;
     } else {

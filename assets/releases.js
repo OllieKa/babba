@@ -14,9 +14,10 @@ window.BIG_BABBA_RELEASES = [
   },
   {
     title: "DeepSociety feat tko - Rede",
-    date: "2026-06-19",
+    date: "2026-06-20",
+    time: "10:00 AM",
     cover: "./assets/Cover_Rede.png.jpeg",
-    hyperfollowUrl: "",
+    hyperfollowUrl: "https://distrokid.com/hyperfollow/deepsociety/rede-feat-tko?ref=release",
     links: {
       spotify: "",
       appleMusic: "",
