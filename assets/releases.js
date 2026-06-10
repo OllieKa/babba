@@ -29,6 +29,7 @@ window.BIG_BABBA_RELEASES = [
   {
     title: "BiG Babba - Honey",
     date: "2026-06-20",
+    time: "12:00 PM",
     cover: "./assets/Cover_Sweet Honey.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/honey?ref=release",
     links: {
