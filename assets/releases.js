@@ -19,11 +19,11 @@ window.BIG_BABBA_RELEASES = [
     cover: "./assets/Cover_Rede.png.jpeg",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/deepsociety/rede-feat-tko?ref=release",
     links: {
-      spotify: "",
+      spotify: "https://open.spotify.com/intl-de/album/797xFbb2eKYxt4csifbEdd",
       appleMusic: "",
-      amazonMusic: "",
-      deezer: "",
-      tidal: ""
+      amazonMusic: "https://music.amazon.de/albums/B0H4S6JQ2J",
+      deezer: "https://link.deezer.com/s/33Cn1LxLHBQnFQboYrc6i",
+      tidal: "https://tidal.com/album/532431460/u"
     }
   },
   {
@@ -33,11 +33,11 @@ window.BIG_BABBA_RELEASES = [
     cover: "./assets/Cover_Sweet Honey.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/honey?ref=release",
     links: {
-      spotify: "",
+      spotify: "https://open.spotify.com/intl-de/album/4iqqwj0rqGWsyM8tVCY8ga",
       appleMusic: "",
-      amazonMusic: "",
-      deezer: "",
-      tidal: ""
+      amazonMusic: "https://music.amazon.de/albums/B0H1H9VSYL",
+      deezer: "https://link.deezer.com/s/33Cn18lSKYyKKCniMMqfX",
+      tidal: "https://tidal.com/album/523839409/u"
     }
   },
   {
