@@ -46,11 +46,11 @@ window.BIG_BABBA_RELEASES = [
     cover: "./assets/Cover_Babbalc.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/babbalc?ref=release",
     links: {
-      spotify: "",
+      spotify: "https://open.spotify.com/intl-de/album/3DtfhAEvke7QcCIuCfu53N",
       appleMusic: "",
-      amazonMusic: "",
-      deezer: "",
-      tidal: ""
+      amazonMusic: "https://music.amazon.de/albums/B0H1V1JHFT",
+      deezer: "https://www.deezer.com/de/album/983198701",
+      tidal: "https://tidal.com/album/524832328/u"
     }
   },
   {
