@@ -59,11 +59,11 @@ window.BIG_BABBA_RELEASES = [
     cover: "./assets/Cover_Kopf Hoch.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/kopf-hoch?ref=release",
     links: {
-      spotify: "",
+      spotify: "https://open.spotify.com/intl-de/album/2K4NHAXE5v3PShQawsR2Kk",
       appleMusic: "",
-      amazonMusic: "",
-      deezer: "",
-      tidal: ""
+      amazonMusic: "https://music.amazon.de/albums/B0H1VH17BX",
+      deezer: "https://link.deezer.com/s/33K9YyXpLwW8xrHLs1Ppw",
+      tidal: "https://tidal.com/album/524833158/u"
     }
   },
   {
