@@ -12,10 +12,8 @@
 
   const services = [
     { key: 'spotify', label: 'Spotify', icon: './assets/spotify.svg' },
-    { key: 'appleMusic', label: 'Apple Music', icon: './assets/applemusic.svg' },
     { key: 'amazonMusic', label: 'Amazon Music', icon: './assets/amazonmusic.svg' },
-    { key: 'deezer', label: 'Deezer', icon: './assets/deezer.svg' },
-    { key: 'tidal', label: 'Tidal', icon: './assets/tidal.svg' }
+    { key: 'appleMusic', label: 'Apple Music', icon: './assets/applemusic.svg' }
   ];
 
   function escapeHtml(value) {
