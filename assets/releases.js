@@ -68,7 +68,7 @@ window.BIG_BABBA_RELEASES = [
   },
   {
     title: "BiG Babba - Chill'N",
-    date: "2026-07-14",
+    date: "2026-07-11",
     cover: "./assets/Cover_Chilln.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/chilln?ref=release",
     links: {
@@ -81,7 +81,7 @@ window.BIG_BABBA_RELEASES = [
   },
   {
     title: "BiG Babba - 2 Mann am Mic",
-    date: "2026-07-21",
+    date: "2026-07-18",
     cover: "./assets/Cover_2 Mann.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/2-mann-am-mic?ref=release",
     links: {
@@ -94,7 +94,7 @@ window.BIG_BABBA_RELEASES = [
   },
   {
     title: "BiG Babba - Fight Musik",
-    date: "2026-07-28",
+    date: "2026-07-25",
     cover: "./assets/Cover_Fight musik.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/fight-music?ref=release",
     links: {
@@ -107,7 +107,7 @@ window.BIG_BABBA_RELEASES = [
   },
   {
     title: "DeepSociety feat. ollieka - Radiomusik",
-    date: "2026-08-04",
+    date: "2026-08-01",
     cover: "./assets/Cover_DeepSociety feat Ollie - Radiomusik.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/deepsociety/radiomusik-feat-ollieka",
     links: {
