@@ -72,9 +72,9 @@ window.BIG_BABBA_RELEASES = [
     cover: "./assets/Cover_Chilln.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/chilln?ref=release",
     links: {
-      spotify: "",
+      spotify: "https://open.spotify.com/intl-de/track/01zi1DY6BIwkCgm6Aat641",
       appleMusic: "",
-      amazonMusic: "",
+      amazonMusic: "https://music.amazon.de/albums/B0H23X3PBQ",
       deezer: "",
       tidal: ""
     }
