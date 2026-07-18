@@ -85,9 +85,9 @@ window.BIG_BABBA_RELEASES = [
     cover: "./assets/Cover_2 Mann.png",
     hyperfollowUrl: "https://distrokid.com/hyperfollow/bigbabba/2-mann-am-mic?ref=release",
     links: {
-      spotify: "",
+      spotify: "https://open.spotify.com/intl-de/track/7oK0uaCECUsnjwfEWHBrZC",
       appleMusic: "",
-      amazonMusic: "",
+      amazonMusic: "https://music.amazon.de/albums/B0H1VKYY7X",
       deezer: "",
       tidal: ""
     }
